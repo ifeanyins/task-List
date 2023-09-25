@@ -1,11 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>What to Do</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header class="logo-Area">
+       <div class="hamburgerMenu">
+            <span><img src="images/menu.png" alt="menu svg" class="hamMenu" width="30px"></span>
+       </div>
+       <div class="logo-Text">
+            <img src="images/check_logo.png" alt="logo" width="30px">
+            <div class="logosvg"><span>WhatToDo</span></div>
+       </div>
+       <div class="theme">
+            <input type="checkbox" checked="true" id="inputCbox">
+            <label for="inputCbox" class="labelB">
+                <img src="images/sun (1).png" alt="" class="sun">
+                <img src="images/download.png" alt="darkmode" class="moon">
+                <div class="ball"></div>
+            </label> 
+       </div>
+       <div class="header-line"></div>
+    </header>
+    <div class="content">
+        <div class="leftPanel">
+            <div class="home">
+                <h1>Home</h1>
+                <div class="home-line"></div>
+                <div class="tile selected" id="alltasks">
+                    <img src="images/inbox.png" alt="all tasks">
+                    <div>All Tasks</div>
+                </div>
+                <div class="tile" id="today">
+                    <img src="images/today1.png" alt="today">
+                    <div>today</div>
+                </div>
+                <div class="tile" id="week">
+                    <img src="images/week2.png" alt="week">
+                    <div>Next 7 Days</div>
+                </div>
+                <div class="tile" id="important">
+                    <img src="images/star.png" alt="important">
+                    <div>Next 7 Days</div>
+                </div>
+            </div>
+            <div class="projects">
+                <h1>Projects</h1>
+                <div class="project-line"></div>
+                <form autocomplete="off" id="project-input" class="hidden">
+                    <div id="project-icon">
+                        <img src="images/menu.png" alt="project input menu">
+                    </div>
+                    <!-- Hidden Input field -->
+                    <div class="input-field">
+                        <input type="text" placeholder="Enter Project name">
+                        <button id="add">Add</button>
+                        <button id="Cancel">Cancel</button>
+                    </div>
+                    <!-- project options -->
+                    <div class="projectOPtions">
+                        <div class="optionBtn">
+                            <button>Rename</button>
+                            <button>Delete</button>
+                        </div>
+                    </div>
+                    <!-- Hidden RenameInput field -->
+                    <form id="renameForm">
+                        <div id="renamemenuImg">
+                            <img src="images/menu.png" alt="menu">
+                        </div>
+                        <input type="text" autocomplete="off" id="renameFormInput">
+                        <div class="renameFBtn">
+                            <button>rename</button>
+                            <button>Cancel</button>
+                        </div>
+                    </form>
+                    <div class="add-Project">
+                        <div class="addProjectSvg">
+                            <img src="images/iconmonstr-plus-circle-thin.png" alt="addIconSvg">
+                        </div>
+                        <div class="addBtnSvg">Add Project</div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="rightPanel">
+            <div class="contentHead">
+                <h1 class="headValue"></h1>
+            </div>
+            <div id="contentDisplay">
+                <ul id="contentUl"></ul>
+            </div>
+            <!-- Hidden pop up option -->
+            <div class="listOption">
+                <button id="listEdit">Edit</button>
+                <button id="listDelete">Delete</button>
+            </div>
+            <!-- Hidden edit list form -->
+            <form autocomplete="off" id="addListForm">
+                <label>Title:</label>
+                <input type="text" placeholder="What to do?">
+                <label>Details(optional):</label>
+                <textarea type="text" placeholder="eg: i'll do it later?" wrap="hard">
+                <label>Date:</label>
+                <input type="date">
+                <div class="formButtons">
+                    <button>Add</button>
+                    <button>Cancel</button>
+                </div>
+            </form>
+            <!-- Hidden add list form -->
+            <form autocomplete="off" id="addListForm">
+                <label>Title:</label>
+                <input type="text" placeholder="What to do?">
+                <label>Details(optional):</label>
+                <textarea type="text" placeholder="eg: i'll do it later?" wrap="hard">
+                <label>Date:</label>
+                <input type="date">
+                <div class="formButtons">
+                    <button>Add</button>
+                    <button>Cancel</button>
+                </div>
+            </form>
+            <div class="addTaskBtn">
+                <div class="addTaskSvg">
+                    <img src="images/iconmonstr-plus-circle-thin.png" alt="addIconSvg">
+                </div>
+                <div class="addBtnSvg">Add Task</div>
+            </div>
+        </div>
+    </div>
     <!-- JS SCRIPT -->
     <script src="main.js"></script>
 </body>
