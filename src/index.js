@@ -1,2 +1,1 @@
-alert('maker')
-alert('ns agbawo')
+// alert('maker')

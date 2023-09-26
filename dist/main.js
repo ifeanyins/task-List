@@ -15,7 +15,7 @@
   \**********************/
 /***/ (() => {
 
-eval("alert('maker')\r\nalert('ns agbawo')\n\n//# sourceURL=webpack://task-list/./src/index.js?");
+eval("// alert('maker')\n\n//# sourceURL=webpack://task-list/./src/index.js?");
 
 /***/ })
 
