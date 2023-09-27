@@ -15,7 +15,7 @@
   \**********************/
 /***/ (() => {
 
-eval("// alert('maker')\n\n//# sourceURL=webpack://task-list/./src/index.js?");
+eval("// alert('maker')\r\n\r\n\r\n// menu button \r\nconst menuIcon = document.querySelector('.hamburgerMenu')\r\nmenuIcon.addEventListener('click', ()=>{\r\n    const leftPanel = document.querySelector('.leftPanel');\r\n    leftPanel.classList.toggle(\"hidden\");\r\n    // const rightPanel = document.querySelector('.rightPanel');\r\n    // rightPanel.style.width('100%')\r\n})\r\n\n\n//# sourceURL=webpack://task-list/./src/index.js?");
 
 /***/ })
 
