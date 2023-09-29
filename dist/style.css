@@ -37,40 +37,47 @@ body.light{
 /* nav style */
 .logo-Area {
     display: grid;
-    grid-template-columns: 45% 40% 10%;
+    grid-template-columns: 40% 45% 10%;
     align-items: center;
-    background-color: var(--textColor);
+    background-color: var(--bgColor3);
     font-size: 2.5rem;
     font-weight: 900;
     padding: 10px 20px;
-    border-bottom: solid 2px var(--accent);
+    border-bottom: solid 2px var(--accentDark);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 /* theme style */
 .themewidth{
     width: 30px;
     cursor: pointer;
 }
-
-
-
-/* content style */
-.content {
-    display: grid;
-    grid-template-columns: 25% 75%;
+.hamMenu{
+    width: 60px;
+    cursor: pointer;
 }
-.leftPanel {
-    background-color: #fff;
+.hamMenu:hover{
+   background-color: grey;
+   border-radius: 10%;
 }
 .hTodo {
     color: var(--accent);
 }
+.whatText{
+    color: var(--textColor);
+}
+/* content style */
+.content {
+    display: grid;
+    grid-template-columns: 25% 75%;
+    height: 100%;
+    background-color: var(--bgColor3);
+}
+.leftPanel {
+    background-color: var(--bgColor1);
+}
 .rightPanel{
-    background-color: var(--textColor);
     padding-left: 30px;
-    /* width: 100%;
-    height: 100%; */
 }
 .hidden{
     display: none;
-    /* background-color: #1f8d4d; */
 }
