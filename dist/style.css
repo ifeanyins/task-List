@@ -56,7 +56,7 @@ body.light{
     cursor: pointer;
 }
 .hamMenu:hover{
-   background-color: grey;
+   background-color: var(--bgColor2);
    border-radius: 10%;
 }
 .hTodo {
@@ -80,4 +80,62 @@ body.light{
 }
 .hidden{
     display: none;
+}
+/* left Panel home */
+.home{
+    display: flex;
+    flex-direction: column;
+}
+ .tile{
+    display: flex;
+    align-items: center;
+    padding:20px 0;
+    padding-left: 20px;
+    margin-left: 15px;
+    margin-bottom: 10px;
+    height: 16px;
+    width: 85%;
+    border-radius: 6px;
+}
+ .tile:hover{
+   background-color: var(--bgColor3);
+   cursor: pointer;
+   display: flex;
+   align-items: center;
+   width: 85%;
+   border-radius: 6px;
+}
+.leftPanelimg{
+    width: 35px;
+}
+.homeText,.leftPanelimgText{
+    color: var(--textColor);
+    font-size: larger;
+}
+.leftPanel h1{
+    font-size: x-large;
+    font-family: sans-serif;
+    padding-left: 20px;
+    display: flex;
+    color: var(--textColor);
+}
+.home-border{
+    border-bottom:2px solid var(--textColor);
+    width: 300px;
+    margin: auto;
+    margin-bottom: 25px;
+}
+.leftPanelimgText{
+    padding-top: 5px;
+    font-family: sans-serif;
+    padding-left: 5px;
+}
+.selected{
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+    border-left: solid 3px var(--accent) !important;
+    background-color: #2abd6770;
+}
+.selected:hover{
+    background-color: #1f8d4d7a !important;
 }
