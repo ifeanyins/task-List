@@ -67,8 +67,10 @@ body.light{
 }
 /* content style */
 .content {
-    display: grid;
-    grid-template-columns: 25% 75%;
+    /* display: grid;
+    grid-template-columns: 25% 75%; */
+    display: flex;
+    flex-direction: row;
     height: 100%;
     background-color: var(--bgColor3);
 }
@@ -76,7 +78,7 @@ body.light{
     background-color: var(--bgColor1);
 }
 .rightPanel{
-    padding-left: 30px;
+    padding: 30px 0 0 50px;
 }
 .hidden{
     display: none;
@@ -85,6 +87,8 @@ body.light{
 .home{
     display: flex;
     flex-direction: column;
+    padding-right:  40px;
+    padding-left:  5px;
 }
  .tile{
     display: flex;
@@ -124,6 +128,7 @@ body.light{
     width: 300px;
     margin: auto;
     margin-bottom: 25px;
+    margin-left: 15px;
 }
 .leftPanelimgText{
     padding-top: 5px;
@@ -138,4 +143,14 @@ body.light{
 }
 .selected:hover{
     background-color: #1f8d4d7a !important;
+}
+.title{
+    background-color: var(--accentDark);
+    border-radius: 5px;
+    color: #fff;
+    font-family: sans-serif;
+    font-size: xx-large;
+    font-weight: 500;
+    padding: 35px 40px;
+    width: 85%;
 }

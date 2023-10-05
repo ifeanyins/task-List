@@ -87,48 +87,50 @@
             </div>
         </div>
         <div class="rightPanel">
-            <div class="contentHead">
-                <h1 class="headValue"></h1>
-            </div>
-            <div id="contentDisplay">
-                <ul id="contentUl"></ul>
-            </div>
-            <!-- Hidden pop up option -->
-            <div class="listOption">
-                <button id="listEdit">Edit</button>
-                <button id="listDelete">Delete</button>
-            </div>
-            <!-- Hidden edit list form -->
-            <form autocomplete="off" id="addListForm">
-                <label>Title:</label>
-                <input type="text" placeholder="What to do?">
-                <label>Details(optional):</label>
-                <textarea placeholder="eg: i'll do it later?" wrap="hard"></textarea>
-                <label>Date:</label>
-                <input type="date">
-                <div class="formButtons">
-                    <button>Add</button>
-                    <button>Cancel</button>
+            <div class="title">All Tasks</div>
+            <div id="list-todo">
+                <ul></ul>
+                <!-- Hidden pop up option -->
+                <div class="option" id="listOption">
+                    <button id="listEdit">Edit</button>
+                    <button id="listDelete">Delete</button>
                 </div>
-            </form>
-         <!-- Hidden add list form -->
-            <form autocomplete="off" id="addListForm">
-                <label>Title:</label>
-                <input type="text" placeholder="What to do?">
-                <label>Details(optional):</label>
-                <textarea  type="text" placeholder="eg: i'll do it later?" wrap="hard"></textarea>
-                <label>Date:</label>
-                <input type="date">
-                <div class="formButtons">
-                    <button>Add</button>
-                    <button>Cancel</button>
+                <!-- Hidden pop up edit task form -->
+                <form autocomplete="off" id="editListForm">
+                    <div class="inputField">
+                        <label>Title:</label>
+                        <input type="text" placeholder="What to do?">
+                        <label>Details(optional):</label>
+                        <textarea placeholder="eg: i'll do it later?" wrap="hard"></textarea>
+                        <label>Date:</label>
+                        <input type="date">
+                        <div class="formButtons">
+                            <button  class="editTaskSubmitBtn">Add</button>
+                            <button  class="editTaskCancelBtn">Cancel</button>
+                        </div>
+                    </div>
+                </form>
+             <!-- Hidden add list form -->
+                <form autocomplete="off" id="addListForm">
+                    <div class="inputField">
+                        <label>Title:</label>
+                        <input type="text" placeholder="What to do?">
+                        <label>Details(optional):</label>
+                        <textarea  type="text" placeholder="eg: i'll do it later?" wrap="hard"></textarea>
+                        <label>Date:</label>
+                        <input type="date">
+                        <div class="formButtons">
+                            <button>Add</button>
+                            <button>Cancel</button>
+                        </div>
+                   </div>
+                </form>
+                <div class="addTaskBtn">
+                    <div class="addTaskSvg">
+                        <img src="images/iconmonstr-plus-circle-thin.png" alt="addIconSvg" width="20px">
+                    </div>
+                    <div class="addBtnSvg">Add Task</div>
                 </div>
-            </form>
-            <div class="addTaskBtn">
-                <div class="addTaskSvg">
-                    <img src="images/iconmonstr-plus-circle-thin.png" alt="addIconSvg" width="20px">
-                </div>
-                <div class="addBtnSvg">Add Task</div>
             </div>
         </div>
     </div>
