@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>WhatTodo</title>
+    <link rel="icon" href="./images/check_logo.png" type="icon">
 </head>
 <body>
     <header class="logo-Area">
@@ -56,8 +57,8 @@
                     <!-- Hidden Input field -->
                     <div class="input-field">
                         <input type="text" placeholder="Enter Project name">
-                        <button id="add">Add</button>
-                        <button id="Cancel">Cancel</button>
+                        <button class="projectSubmitlBtn">Add</button>
+                        <button class="projectCancelBtn">Cancel</button>
                     </div>
                     <!-- project options -->
                     <div class="projectOPtions">
@@ -110,7 +111,7 @@
                         </div>
                     </div>
                 </form>
-             <!-- Hidden add list form -->
+             <!-- Hidden add list form -->         
                 <form autocomplete="off" id="addListForm">
                     <div class="inputField">
                         <label>Title:</label>
@@ -120,8 +121,8 @@
                         <label>Date:</label>
                         <input type="date">
                         <div class="formButtons">
-                            <button>Add</button>
-                            <button>Cancel</button>
+                            <button class="listSubmitBtn">Add</button>
+                            <button class="listCancelBtn">Cancel</button>
                         </div>
                    </div>
                 </form>
