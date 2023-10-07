@@ -55,36 +55,39 @@
                         <img src="images/menu-icon-6.png" alt="project input menu" width="30px">
                     </div>
                     <!-- Hidden Input field -->
-                    <div class="input-field">
-                        <input type="text" placeholder="Enter Project name">
+                    <div class="inputField" class="hidden">
+                        <input type="text"  id="projectInput" placeholder="Enter Project name">
                         <button class="projectSubmitlBtn">Add</button>
                         <button class="projectCancelBtn">Cancel</button>
+                        <input type="text">
                     </div>
                     <!-- project options -->
                     <div class="projectOPtions">
-                        <div class="optionBtn">
+                        <div class="option" id="projectOption">
                             <button>Rename</button>
                             <button>Delete</button>
                         </div>
                     </div>
-                    <!-- Hidden RenameInput field -->
-                    <form id="renameForm">
-                        <div id="renamemenuImg">
-                            <img src="images/menu-icon-6.png" alt="menu" width="30px">
+                </form>
+                <!-- Hidden RenameInput field -->
+                <form id="renameForm" autocomplete="off" class="hidden">
+                    <div class="projectIcon">
+                        <img src="images/menu-icon-6.png" alt="menu" width="30px">
+                    </div>
+                    <div class="inputField">
+                        <input type="text" autocomplete="off" id="projectRenameInput">
+                        <div class="formButtons">
+                            <button class="rename-renameBtn">rename</button>
+                            <button class="rename-cancelBtn">Cancel</button>
                         </div>
-                        <input type="text" autocomplete="off" id="renameFormInput">
-                        <div class="renameFBtn">
-                            <button>rename</button>
-                            <button>Cancel</button>
-                        </div>
-                    </form>
-                    <div class="add-Project">
-                        <div class="addProjectSvg">
-                            <img src="images/iconmonstr-plus-circle-thin.png" alt="addIconSvg" width="20px">
-                        </div>
-                        <div class="addBtnSvg">Add Project</div>
                     </div>
                 </form>
+                <div class="add-Project">
+                    <div class="addProjectSvg">
+                        <img src="images/iconmonstr-plus-circle-thin.png" alt="addIconSvg" width="20px">
+                    </div>
+                    <div class="addBtnSvg">Add Project</div>
+                </div>
             </div>
         </div>
         <div class="rightPanel">
