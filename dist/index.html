@@ -19,7 +19,7 @@
              <input type="checkbox" checked="true" id="inputCbox">
              <label for="inputCbox" class="labelB">
                  <img src="images/sun (1).png" alt="" class="themewidth sun" id="icon">
-                 <img src="images/download.png" alt="darkmode" class="themewidth moon" id="icon">
+                 <img src="images/.png" alt="darkmode" class="themewidth moon" id="icon">
                  <div class="ball"></div>
              </label> 
         </div>
@@ -50,30 +50,32 @@
             <div class="projects">
                 <h1>Projects</h1>
                 <div class="project-line"></div>
-                <form autocomplete="off" id="project-input" class="hidden">
-                    <div id="project-icon">
+                <form autocomplete="off" id="projectForm" class="hidden">
+                    <div class="df">                   <span id="project-icon">
                         <img src="images/menu-icon-6.png" alt="project input menu" width="30px">
-                    </div>
-                    <!-- Hidden Input field -->
-                    <div class="inputField" class="hidden">
-                        <input type="text"  id="projectInput" placeholder="Enter Project name">
-                        <button class="projectSubmitlBtn">Add</button>
-                        <button class="projectCancelBtn">Cancel</button>
-                        <input type="text">
-                    </div>
-                    <!-- project options -->
-                    <div class="projectOPtions">
-                        <div class="option" id="projectOption">
-                            <button>Rename</button>
-                            <button>Delete</button>
+                        </span>
+                        <!-- Hidden Input field -->
+                        <div class="inputField" class="hidden">
+                            <input type="text"  id="projectInput" placeholder="Enter Project name">
+                            <br>
+                            <button class="projectSubmitBtn">Add</button>
+                            <button class="projectCancelBtn">Cancel</button>
+                            <!-- <input type="text"> -->
+                        </div>
+                        <!-- project options -->
+                        <div class="projectOptions">
+                            <div class="option hidden" id="projectOption">
+                                <button>Rename</button>
+                                <button>Delete</button>
+                            </div>
                         </div>
                     </div>
                 </form>
                 <!-- Hidden RenameInput field -->
                 <form id="renameForm" autocomplete="off" class="hidden">
-                    <div class="projectIcon">
+                    <span class="projectIcon">
                         <img src="images/menu-icon-6.png" alt="menu" width="30px">
-                    </div>
+                    </span>
                     <div class="inputField">
                         <input type="text" autocomplete="off" id="projectRenameInput">
                         <div class="formButtons">
@@ -83,13 +85,14 @@
                     </div>
                 </form>
                 <div class="add-Project">
-                    <div class="addProjectSvg">
+                    <span class="addProjectSvg">
                         <img src="images/iconmonstr-plus-circle-thin.png" alt="addIconSvg" width="20px">
-                    </div>
-                    <div class="addBtnSvg">Add Project</div>
+                    </span>
+                    <button id="addProject">Add Project</button>
                 </div>
             </div>
         </div>
+        <!-- RIGHT PANEL -->
         <div class="rightPanel">
             <div class="title">All Tasks</div>
             <div id="list-todo">
