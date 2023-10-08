@@ -1,5 +1,6 @@
+import { createEventlistener } from "./creatingPtoject";
 
-
+createEventlistener();
 // menu button 
 const menuIcon = document.querySelector('.hamMenu')
 menuIcon.addEventListener('click', ()=>{
