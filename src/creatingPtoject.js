@@ -77,47 +77,47 @@ const createSpanIcon = (name) => {
 }
 
 // create a project and add it to the lst of projects in html
-// const addProject = (dataProject, textInput) => {
-//     const project = document.querySelector('.projects');
-//     const form = document.querySelector('#projectForm');
+const addProject = (dataProject, textInput) => {
+    const project = document.querySelector('.projects');
+    const form = document.querySelector('#projectForm');
 
-//     const container = document.createElement('div');
-//     container.setAttribute('data-project', `${dataProject}`);
-//     container.classList.add('title');
-//     project.insertBefore(container, form) //insert the menu icon before the project name
+    const container = document.createElement('div');
+    container.setAttribute('data-project', `${dataProject}`);
+    container.classList.add('title');
+    project.insertBefore(container, form) //insert the menu icon before the project name
 
-//     // menu three lines icon
-//     const menuIcon = createSpanIcon('menu');
-//     menuIcon.setAttribute('data-drag', '');
-//     container.appendChild(menuIcon)
-//     // name and number status
-//     const projectInfo = document.createElement('div');
-//     projectInfo.classList.add('projectInfo');
-//     container.appendChild(projectInfo);
+    // menu three lines icon
+    const menuIcon = createSpanIcon('menu');
+    menuIcon.setAttribute('data-drag', '');
+    container.appendChild(menuIcon)
+    // name and number status
+    const projectInfo = document.createElement('div');
+    projectInfo.classList.add('projectInfo');
+    container.appendChild(projectInfo);
 
-//     const projectName = document.createElement('div')
-//     projectName.classList.add('projectName');
-//     projectName.textContent = textInput;
+    const projectName = document.createElement('d')
+    projectName.classList.add('projectName');
+    projectName.textContent = textInput;
 
-//     projectInfo.appendChild(projectName);
+    projectInfo.appendChild(projectName);
     
-//     //three dots on the right
-//     const editdiv = document.createElement('div');
-//     editdiv.classList.add('editContainer');
-//     editdiv.setAttribute("data-dropdown", "");
-//     container.appendChild(editdiv);
-//     // call function to create a span icon from google
-//     const editIcon = createSpanIcon("more_vert");
-//     editIcon.setAttribute("data-dropdown-button","");
-//     editdiv.appendChild(editIcon);
-// }
+    //three dots on the right
+    const editdiv = document.createElement('div');
+    editdiv.classList.add('editContainer');
+    editdiv.setAttribute("data-dropdown", "");
+    container.appendChild(editdiv);
+    // call function to create a span icon from google
+    const editIcon = createSpanIcon("more_vert");
+    editIcon.setAttribute("data-dropdown-button","");
+    editdiv.appendChild(editIcon);
+}
 
 // display the list of all projects in the left panel
-// const displayProject = (arr) =>{
-//     arr.forEach(project => {
-//         addProject(project.dataProject, project.name);
-//     });
-// }
+const displayProject = (arr) =>{
+    arr.forEach(project => {
+        addProject(project.dataProject, project.name);
+    });
+}
 
 function showProjectForm(){
     const projectForm = document.querySelector('#projectForm');
