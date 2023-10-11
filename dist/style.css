@@ -193,7 +193,11 @@ body.light{
     background-color: rgb(190, 4, 4);
 }
 #projectInput{
-    /* padding:5px 35px; */
     width: 150%;
     height: 40%;
+}
+.projectInfo{
+  margin: auto;
+  font-size: x-large;
+ color: var(--textColor);
 }
