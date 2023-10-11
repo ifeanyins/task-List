@@ -88,6 +88,7 @@ const addProject = (dataProject, textInput) => {
 
     // menu three lines icon
     const menuIcon = createSpanIcon('menu'); // using the span icon to give it a name hten adding the corresponding class 
+    menuIcon.classList.add("material-symbols-outlined");
     menuIcon.setAttribute('data-drag', '');
     container.appendChild(menuIcon)
     // name and number status (div for the project name)
@@ -108,6 +109,7 @@ const addProject = (dataProject, textInput) => {
     container.appendChild(editdiv);
     // call function to create a span icon from google
     const editIcon = createSpanIcon("more_vert"); //find the google icons for three dots and substitute 
+    editIcon.classList.add("material-symbols-outlined");
     editIcon.setAttribute("data-dropdown-button","");
     editdiv.appendChild(editIcon);
 }
