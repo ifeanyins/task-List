@@ -1,4 +1,4 @@
-import { createEventlistener } from "./creatingPtoject";
+import { createEventlistener } from "./creatingProject";
 
 createEventlistener();
 // menu button 

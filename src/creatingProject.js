@@ -29,7 +29,7 @@ function saveToLocalStorage(){
 
 // find next data-set (to locate the next tile)
 function findNextDataset(){
-    const allProjects = document.querySelectorAll('[data-project]');
+    const allProjects = document.querySelectorAll('[data-project]'); // we would use this data project to target all the newly created project and locate the clicked tile / the next tile
     return allProjects.length;
 }
 
@@ -39,21 +39,6 @@ const hideProjectForm = () => {
 
     projectInput.value = "";
     projectForm.classList.add("hidden");
-}
-
-// process the input and prepare to create element project
-function processProjectInput(e){
-    let projectName = document.getElementById("projectInput").value;
-    let dataProject = findNextDataset();
-    const newProject = createProject(dataProject, projectName);
-
-    // push the item to local storage using project list
-    projectList.push(newProject);
-    saveToLocalStorage();
-
-    addProject(dataProject, projectName);
-    hideProjectForm();
-    e.preventDefault();
 }
 
 // Create project factory function
@@ -68,34 +53,49 @@ function createProject(dataProject, name){
     }
 }
 
+// process the input and prepare to create element project
+function processProjectInput(e){
+    let dataProject = findNextDataset();
+    let projectName = document.getElementById("projectInput").value;
+    const newProject = createProject(dataProject, projectName);
+
+    // push the item to local storage using project list
+    projectList.push(newProject);
+    saveToLocalStorage();
+
+    addProject(dataProject, projectName);
+    hideProjectForm();
+    e.preventDefault();
+}
+
 // create a span icon of google material icons
 const createSpanIcon = (name) => {
-    const icon = document.createElement('span');
+    const icon = document.createElement('span'); 
     icon.classList.add("material-icons-round");
-    icon.textContent = name;
+    icon.textContent = name; // i call my icons from google fonts, (you need a class containing the font and span containing the name)
     return icon;
 }
 
 // create a project and add it to the lst of projects in html
 const addProject = (dataProject, textInput) => {
-    const project = document.querySelector('.projects');
-    const form = document.querySelector('#projectForm');
+    const project = document.querySelector('.projects'); //used to target the main project head for inserion of the form
+    const form = document.querySelector('#projectForm'); //to insert the form
 
     const container = document.createElement('div');
     container.setAttribute('data-project', `${dataProject}`);
-    container.classList.add('title');
+    container.classList.add('tile');
     project.insertBefore(container, form) //insert the menu icon before the project name
 
     // menu three lines icon
-    const menuIcon = createSpanIcon('menu');
+    const menuIcon = createSpanIcon('menu'); // using the span icon to give it a name hten adding the corresponding class 
     menuIcon.setAttribute('data-drag', '');
     container.appendChild(menuIcon)
-    // name and number status
+    // name and number status (div for the project name)
     const projectInfo = document.createElement('div');
     projectInfo.classList.add('projectInfo');
     container.appendChild(projectInfo);
 
-    const projectName = document.createElement('d')
+    const projectName = document.createElement('div');
     projectName.classList.add('projectName');
     projectName.textContent = textInput;
 
@@ -107,7 +107,7 @@ const addProject = (dataProject, textInput) => {
     editdiv.setAttribute("data-dropdown", "");
     container.appendChild(editdiv);
     // call function to create a span icon from google
-    const editIcon = createSpanIcon("more_vert");
+    const editIcon = createSpanIcon("more_vert"); //find the google icons for three dots and substitute 
     editIcon.setAttribute("data-dropdown-button","");
     editdiv.appendChild(editIcon);
 }
