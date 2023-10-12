@@ -89,7 +89,8 @@ body.light{
     padding-right:  40px;
     padding-left:  5px;
 }
- .tile{
+ .tile,
+ .add-Project{
     display: flex;
     align-items: center;
     padding:20px 0;
@@ -100,7 +101,8 @@ body.light{
     width: 85%;
     border-radius: 6px;
 }
- .tile:hover{
+ .tile:hover,
+ .add-Project:hover{
    background-color: var(--bgColor3);
    cursor: pointer;
    display: flex;
@@ -111,7 +113,10 @@ body.light{
 .leftPanelimg{
     width: 35px;
 }
-.homeText,.leftPanelimgText{
+.add-Project,
+.leftPanelimgText,
+.projectInfo,
+.material-icons-round{
     color: var(--textColor);
     font-size: larger;
 }
@@ -132,8 +137,8 @@ body.light{
     margin-left: 15px;
 }
 .leftPanelimgText{
-    padding-top: 5px;
     font-family: sans-serif;
+    padding-top: 5px;
     padding-left: 5px;
 }
 .df{
@@ -192,12 +197,13 @@ body.light{
 .editTaskCancelBtn{
     background-color: rgb(190, 4, 4);
 }
+#addProject{
+    padding-left: 30px;
+}
 #projectInput{
-    width: 150%;
     height: 40%;
+    width: 150%;
 }
 .projectInfo{
-  margin: auto;
-  font-size: x-large;
- color: var(--textColor);
+    margin: auto;
 }
