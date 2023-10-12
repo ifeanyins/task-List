@@ -5,7 +5,7 @@ const createEventlistener = () =>{
     const cancel = document.querySelector('.projectCancelBtn');
     cancel.addEventListener('click', hideProjectForm);
 
-    const add = document.getElementById('addProject');
+    const add = document.querySelector('.add-Project');
     add.addEventListener('click', showProjectForm);
 
     const submit = document.getElementById('projectForm');
