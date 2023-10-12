@@ -73,7 +73,6 @@ body.light{
 }
 .leftPanel {
     background-color: var(--bgColor1);
-    height: 100%;
 }
 .rightPanel{
     padding: 30px 0 0 50px;
@@ -167,10 +166,6 @@ body.light{
     display: flex;
     flex-direction: column;
     flex-direction: 1;
-}
-.formBtn{
-    display: flex;
-    justify-content: center;
 }
 .formButtons{
     margin-top:5px;
