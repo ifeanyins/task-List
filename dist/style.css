@@ -13,7 +13,6 @@
 
 html{
     width: 100%;
-    height:100%;
     margin:0;
     padding: 0;
     
@@ -67,13 +66,14 @@ body.light{
 }
 /* content style */
 .content {
+    background-color: var(--bgColor3);
     display: flex;
     flex-direction: row;
     height: 100%;
-    background-color: var(--bgColor3);
 }
 .leftPanel {
     background-color: var(--bgColor1);
+    height: 100%;
 }
 .rightPanel{
     padding: 30px 0 0 50px;
@@ -163,6 +163,21 @@ body.light{
     padding: 35px 40px;
     width: 90%;
 }
+.inputField{
+    display: flex;
+    flex-direction: column;
+    flex-direction: 1;
+}
+.formBtn{
+    display: flex;
+    justify-content: center;
+}
+.formButtons{
+    margin-top:5px;
+    display: flex;
+    justify-content:center;
+    width: 100%;
+}
 .projectSubmitBtn,
 .projectCancelBtn,
 .rename-renameBtn,
@@ -206,4 +221,8 @@ body.light{
 }
 .projectInfo{
     margin: auto;
+}
+.projects{
+    display: flex;
+    flex-direction: column;
 }
