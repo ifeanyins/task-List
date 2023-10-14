@@ -33,6 +33,10 @@ function findNextDataset(){
     return allProjects.length;
 }
 
+function showProjectForm(){
+    const projectForm = document.querySelector('#projectForm');
+    projectForm.classList.remove('hidden');
+}
 const hideProjectForm = () => {
     const projectForm = document.querySelector('#projectForm');
     const projectInput = document.querySelector('#projectInput');
@@ -57,7 +61,7 @@ function createProject(dataProject, name){
 function processProjectInput(e){
     let dataProject = findNextDataset();
     let projectName = document.getElementById("projectInput").value;
-    const newProject = createProject(dataProject, projectName);
+    const newProject = createProject(dataProject, projectName); //this new project function was created to make joining the id and project content possible
 
     // push the item to local storage using project list
     projectList.push(newProject);
@@ -99,7 +103,6 @@ const addProject = (dataProject, textInput) => {
     const projectName = document.createElement('div');
     projectName.classList.add('projectName');
     projectName.textContent = textInput;
-
     projectInfo.appendChild(projectName);
     
     //three dots on the right
@@ -107,8 +110,8 @@ const addProject = (dataProject, textInput) => {
     editdiv.classList.add('editContainer');
     editdiv.setAttribute("data-dropdown", "");
     container.appendChild(editdiv);
-    // call function to create a span icon from google
-    const editIcon = createSpanIcon("more_vert"); //find the google icons for three dots and substitute 
+    // call function to create a span icon from google, cause i'm a bit lazy
+    const editIcon = createSpanIcon("more_vert"); // the google icons for three dots
     editIcon.classList.add("material-symbols-outlined");
     editIcon.setAttribute("data-dropdown-button","");
     editdiv.appendChild(editIcon);
@@ -121,9 +124,19 @@ const displayProject = (arr) =>{
     });
 }
 
-function showProjectForm(){
-    const projectForm = document.querySelector('#projectForm');
-    projectForm.classList.remove('hidden');
+// dislay the add task btn when the project tile is selected
+function showaddTaskBtn(){
+    const addTaskBtn = document.querySelector('.addList');
+    addTaskBtn.classList.remove('hidden');
+}
+// hide the add task btn when the home tile is selected
+function HideaddTaskBtn(){
+    const addTaskBtn = document.querySelector('.addList');
+    addTaskBtn.classList.add('hidden');
 }
 
+// check to see what tile is selected
+function checkTile(e){
+    let homeTile = e.target.closest(".home .tile")
+}
 export {createEventlistener} 

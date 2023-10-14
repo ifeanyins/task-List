@@ -24,7 +24,6 @@
                  <div class="ball"></div>
              </label> 
         </div>
-        <div class="header-line"></div>
      </header>
     <div class="content">
         <div class="leftPanel">
@@ -98,12 +97,12 @@
             <div id="list-todo">
                 <ul></ul>
                 <!-- Hidden pop up option -->
-                <div class="option" id="listOption">
+                <div class="option hidden" id="listOption">
                     <button id="listEdit">Edit</button>
                     <button id="listDelete">Delete</button>
                 </div>
                 <!-- Hidden pop up edit task form -->
-                <form autocomplete="off" id="editListForm">
+                <form autocomplete="off" id="editListForm" class="hidden">
                     <div class="inputField">
                         <label>Title:</label>
                         <input type="text" placeholder="What to do?">
@@ -118,7 +117,7 @@
                     </div>
                 </form>
              <!-- Hidden add list form -->         
-                <form autocomplete="off" id="addListForm">
+                <form autocomplete="off" id="addListForm" class="hidden">
                     <div class="inputField">
                         <label>Title:</label>
                         <input type="text" placeholder="What to do?">
@@ -132,13 +131,10 @@
                         </div>
                    </div>
                 </form>
-                <div class="addTaskBtn">
-                    <div class="addTaskSvg">
-                        <img src="images/iconmonstr-plus-circle-thin.png" alt="addIconSvg" width="20px">
-                    </div>
-                    <div class="addBtnSvg">Add Task</div>
+                <div class="addList">
+                    <span class="material-symbols-outlined">add_circle</span><div class="addListBtn">Add Task</div>
                 </div>
-            </div>
+            </div> 
         </div>
     </div>
     <!-- JS SCRIPT -->
