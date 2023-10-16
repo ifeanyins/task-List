@@ -11,8 +11,8 @@ const createEventlistener = () =>{
     const submit = document.getElementById('projectForm');
     submit.addEventListener('submit', processProjectInput);
 
-    // const leftPanel = document.querySelector('.leftPanel');
-    // leftPanel.addEventListener('click', checkTile);
+    const leftPanel = document.querySelector('.leftPanel');
+    leftPanel.addEventListener('click', checkTile);
 
     displayProject(projectList);
 }
@@ -23,7 +23,7 @@ projectList = JSON.parse(projectList || JSON.stringify(defaultProjectList));
 
 // save project and last id data on local storage
 function saveToLocalStorage(){
-    localStorage.setItem('myProjectList', JSON.stringify(projectList)); //the right hand side should b input.value, we use project list to push the now created input.value in the procces func
+    localStorage.setItem('myProjectList', JSON.stringify(projectList)); //the right hand side should be input.value, we use project list to push the now created input.value in the procces func
     localStorage.setItem("currentId", (id).toString());
 }
 
@@ -130,13 +130,43 @@ function showaddTaskBtn(){
     addTaskBtn.classList.remove('hidden');
 }
 // hide the add task btn when the home tile is selected
-function HideaddTaskBtn(){
+function HideAddTaskBtn(){
     const addTaskBtn = document.querySelector('.addList');
     addTaskBtn.classList.add('hidden');
 }
 
 // check to see what tile is selected
 function checkTile(e){
-    let homeTile = e.target.closest(".home .tile")
+    let homeTile = e.target.closest(".home .tile");
+    let projectTile = e.target.closest("projects .tile");
+    if(homeTile != null){
+        const title = homeTile.querySelector("[data-name]");
+        selectTile(homeTile);
+        // revertOptionLocatioin();
+        // checkWhichHomeTile(homeTile);
+        // updateTitle(title); look up hte updateTitle & title coorelation
+        HideAddTaskBtn();
+    }else if(projectTile != null){
+        const title = projectTile.querySelector(".projectName"); //relate to the project on top
+        let dataProject = projectTile.datset.project;
+
+        // revertEditFormLocation();
+        // revertOptionLocation();
+
+        // displayTask(dataProject);
+        selectTile(projectTile);
+        updateTitle(projectTile);
+        showaddTaskBtn();
+    }else {
+        return;
+    }
 }
-export {createEventlistener} 
+
+// when selecting a tile from left panel apply css
+const selectTile = (node) =>{
+    const selectedTile = document.querySelector('.selected');
+    selectTile.classList.remove('selected'); //remove class selected from old title
+
+    node.classList.add('selected'); //add class selected to current title
+}
+export {createEventlistener, createSpanIcon, projectList, saveToLocalStorage} 
