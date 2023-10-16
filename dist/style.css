@@ -227,3 +227,6 @@ body.light{
     display: flex;
     flex-direction: column;
 }
+.addList{
+    cursor: pointer;
+}
