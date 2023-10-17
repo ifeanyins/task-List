@@ -88,13 +88,13 @@ const addProject = (dataProject, textInput) => {
     const container = document.createElement('div');
     container.setAttribute('data-project', `${dataProject}`);
     container.classList.add('tile');
-    project.insertBefore(container, form) //insert the menu icon before the project name
+    project.insertBefore(container, form); //insert the menu icon before the project name
 
     // menu three lines icon
     const menuIcon = createSpanIcon('menu'); // using the span icon to give it a name hten adding the corresponding class 
     menuIcon.classList.add("material-symbols-outlined");
     menuIcon.setAttribute('data-drag', '');
-    container.appendChild(menuIcon)
+    container.appendChild(menuIcon);
     // name and number status (div for the project name)
     const projectInfo = document.createElement('div');
     projectInfo.classList.add('projectInfo');
@@ -165,8 +165,8 @@ function checkTile(e){
 // when selecting a tile from left panel apply css
 const selectTile = (node) =>{
     const selectedTile = document.querySelector('.selected');
-    selectTile.classList.remove('selected'); //remove class selected from old title
+    selectedTile.classList.remove('selected'); //remove class selected from old title
 
     node.classList.add('selected'); //add class selected to current title
 }
-export {createEventlistener, createSpanIcon, projectList, saveToLocalStorage} 
+export {createEventlistener, createSpanIcon, projectList, saveToLocalStorage, HideAddTaskBtn};
