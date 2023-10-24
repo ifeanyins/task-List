@@ -6,7 +6,6 @@ const menuIcon = document.querySelector('.hamMenu')
 menuIcon.addEventListener('click', ()=>{
     const leftPanel = document.querySelector('.leftPanel');
     leftPanel.classList.toggle("hidden");
-    
 })
 
 //on start up checked wether its on light mode or dark mode
