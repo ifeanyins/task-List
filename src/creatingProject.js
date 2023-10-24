@@ -1,5 +1,8 @@
-
-
+import { displayTask, updateTitle, id} from "./creatingTask";
+// import { revertEditFormLocation } from "./editingTask";
+// import { revertOptionLocation } from "./editingProject";
+// import { dragStartEndEvent } from "./dragAndDrop";
+import { checkWhichHomeTile } from "./homeSection";
 const createEventlistener = () =>{
     // event listener for creating a form for adding projects
     const cancel = document.querySelector('.projectCancelBtn');
@@ -64,10 +67,10 @@ function processProjectInput(e){
     const newProject = createProject(dataProject, projectName); //this new project function was created to make joining the id and project content possible
 
     // push the item to local storage using project list
-    projectList.push(newProject);
+    projectList.push(newProject); //project list can access this function because it was created outside the scope
     saveToLocalStorage();
 
-    addProject(dataProject, projectName);
+    addProject(dataProject, projectName); //add project function was used to create the structure and arrange it in desired order including the icons also
     hideProjectForm();
     e.preventDefault();
 }
@@ -91,7 +94,7 @@ const addProject = (dataProject, textInput) => {
     project.insertBefore(container, form); //insert the menu icon before the project name
 
     // menu three lines icon
-    const menuIcon = createSpanIcon('menu'); // using the span icon to give it a name hten adding the corresponding class 
+    const menuIcon = createSpanIcon('menu'); // using the span icon to give it a name then adding the corresponding class 
     menuIcon.classList.add("material-symbols-outlined");
     menuIcon.setAttribute('data-drag', '');
     container.appendChild(menuIcon);
@@ -143,19 +146,19 @@ function checkTile(e){
         const title = homeTile.querySelector("[data-name]");
         selectTile(homeTile);
         // revertOptionLocatioin();
-        // checkWhichHomeTile(homeTile);
-        // updateTitle(title); look up hte updateTitle & title coorelation
+        checkWhichHomeTile(homeTile);
+        updateTitle(title); 
         HideAddTaskBtn();
     }else if(projectTile != null){
         const title = projectTile.querySelector(".projectName"); //relate to the project on top
-        let dataProject = projectTile.datset.project;
+        let dataProject = projectTile.dataset.project; 
 
         // revertEditFormLocation();
         // revertOptionLocation();
 
-        // displayTask(dataProject);
+        displayTask(dataProject);
         selectTile(projectTile);
-        updateTitle(projectTile);
+        updateTitle(title); //adding the project textcontent to the title
         showaddTaskBtn();
     }else {
         return;

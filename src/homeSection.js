@@ -1,5 +1,6 @@
-import { projectList, HideAddTaskBtn } from "./creatingProject";
 import parseISO from "date-fns/parseISO";
+import { addDays, format, isEqual, isWithinInterval } from "date-fns";
+import { projectList, HideAddTaskBtn } from "./creatingProject";
 
 
 function checkWhichHomeTile(homeTile){
@@ -26,8 +27,8 @@ function showNoTask(){
     const ul = document.querySelector("ul");
     const div = document.createElement("div");
     div.classList.add("noTask");
-    div.textContent = "Yay! No Tasks"
-    ul.appendChild(div)
+    div.textContent = "Yay! No Tasks";
+    ul.appendChild(div);
 }
 
 function checkNoTask(){
@@ -69,7 +70,7 @@ function displayToday(){
 function displayThisWeek(){
     clearContent();
     projectList.forEach(project => {
-        project.taskList.forEach(project => {
+        project.taskList.forEach(task => {
             let date = parseISO(task.date);
             if(checkNextWeek(date)){
                 addTask(task.id,task.title, task.details, task.date,task.completed, task.important);
@@ -78,7 +79,7 @@ function displayThisWeek(){
                 return;
             }
         });
-        checkNoTask();
+        checkNoTask();      
     });
 }
 // check if the date is within the interval of next week
