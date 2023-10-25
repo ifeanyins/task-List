@@ -39,3 +39,26 @@ function updateImportantTask(e){
     refreshDisplay(selectedTask.dataProject);
 }
 
+// delete task from array
+function deleteTask(e){
+    let listNode = e.target.closest("li");
+    let id = listNode.id;
+    let selectedTask = findSelectedTask(id);
+    let dataProject = selectedTask.dataProject;
+    projectList[dataProject].taskList = projectList[dataProject].taskList.filter(task => task != selectedTask);
+    saveToLocalStorage();
+    revertOptionLocation();
+    listNode.remove();
+}
+
+// find the task via id
+function findSelectedTask(listId){
+    let selectedTask = projectList.reduce((acc, project) =>{
+        let currentTask = project.taskList.find(task => (task.id == listId));
+        if(currentTask != null){
+            acc = currentTask;
+        }
+        return acc;
+    }, {});
+    return selectedTask;   
+}
