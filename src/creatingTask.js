@@ -1,5 +1,5 @@
-import { projectList, createSpanIcon, saveToLocalStorage } from "./creatingProject"
-import {styleCompletedTask, updateCompletedTask,styleImportantTask, updateImportantTask ,deleteTask,showEditForm,revertEditFormLocation, processEditTask, showHiddenTask} from "./editingTask"
+import { projectList, createSpanIcon, saveToLocalStorage } from "./creatingProject";
+import {styleCompletedTask, updateCompletedTask,styleImportantTask, updateImportantTask ,deleteTask,showEditForm,revertEditFormLocation, processEditTask, showHiddenTask} from "./editingTask";
 
 
 
@@ -147,15 +147,46 @@ function addTask(listId, title, details, date, completed, important){
 
     const listDetails = document.createElement("div");
     listDetails.classList.add("list-details");
-    li.appendChild(unchecked);
+    li.appendChild(listDetails);
 
     if(completed){
         unchecked.classList.toggle("checked");
         listDetails.classList.toggle("lineThrough");
         listDetails.classList.toggle("fade");
     }
+    
+    const taskTitle = document.createElement('div');
+    taskTitle.classList.add("taskTitle");
+    taskTitle.textContent = title;
+    listDetails.appendChild(taskTitle);
+
+    const taskDetails = document.createElement('div');
+    taskDetails.classList.add("taskDetails");
+    taskDetails.textContent = details;
+    listDetails.appendChild(taskDetails);
+
+    const dateDiv = document.createElement('div');
+    dateDiv.classList.add("dateDiv");
+    dateDiv.textContent = date;
+    listDetails.appendChild(dateDiv);
+
+    const listRight = document.createElement('div');
+    listRight.classList.add("list-right");
+    li.appendChild(dateDiv);
+
+    const starOutline = createSpanIcon("star_outline");
+    starOutline.classList.add("star_outline");
+    listRight.appendChild(starOutline);
+
+    const star = createSpanIcon("star");
+    star.classList.add("important");
+    listRight.appendChild(star);
+    
+    if(important){
+        starOutline.classList.add("listHidden");
+    }
     else{
-        star.classList.classList.add("listHidden")
+        star.classList.classList.add("listHidden");
     }
 
     const editContainer = document.createElement('div');
