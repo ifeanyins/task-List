@@ -13,7 +13,7 @@ function listEvent(){
     const listSubmit = document.getElementById("listForm");
     listSubmit.addEventListener("submit", processListInput);
 
-    const todoList = document.querySelector(".list-todo");
+    const todoList = document.querySelector("#list-todo");
     todoList.addEventListener("click", checkListEvent);
 }
 
@@ -181,7 +181,7 @@ function addTask(listId, title, details, date, completed, important){
     const star = createSpanIcon("star");
     star.classList.add("important");
     listRight.appendChild(star);
-    
+
     if(important){
         starOutline.classList.add("listHidden");
     }
