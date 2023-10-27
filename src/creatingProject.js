@@ -1,7 +1,7 @@
 import { displayTask, updateTitle, id} from "./creatingTask";
-// import { revertEditFormLocation } from "./editingTask";
+import { revertEditFormLocation } from "./editingTask";
 // import { revertOptionLocation } from "./editingProject";
-// import { dragStartEndEvent } from "./dragAndDrop";
+import { dragStartEndEvent } from "./dragAndDrop";
 import { checkWhichHomeTile } from "./homeSection";
 const createEventlistener = () =>{
     // event listener for creating a form for adding projects
@@ -118,6 +118,8 @@ const addProject = (dataProject, textInput) => {
     editIcon.classList.add("material-symbols-outlined");
     editIcon.setAttribute("data-dropdown-button","");
     editdiv.appendChild(editIcon);
+
+    dragStartEndEvent(container);
 }
 
 // display the list of all projects in the left panel
@@ -153,7 +155,7 @@ function checkTile(e){
         const title = projectTile.querySelector(".projectName"); //relate to the project on top
         let dataProject = projectTile.dataset.project; 
 
-        // revertEditFormLocation();
+        revertEditFormLocation();
         // revertOptionLocation();
 
         displayTask(dataProject);
