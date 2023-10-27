@@ -4,12 +4,16 @@ import { editContainerEventListener} from "./editingProject";
 import {dragAndDropEvent} from "./dragAndDrop";
 import {displayAllTasks} from "./homeSection";
 
-listEvent();
-createEventListener();
-editContainerEventListener();
-dragAndDropEvent();
-displayAllTasks();
-createEventlistener();
+function pageLoad(){
+    listEvent();
+    createEventListener();
+    editContainerEventListener();
+    dragAndDropEvent();
+    displayAllTasks();
+    createEventlistener();
+}
+
+pageLoad();
 // menu button 
 const menuIcon = document.querySelector('.hamMenu')
 menuIcon.addEventListener('click', ()=>{

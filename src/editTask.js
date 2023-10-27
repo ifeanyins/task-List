@@ -7,6 +7,7 @@ import { checkWhichHomeTile } from "./homeSection";
 function styleCompletedTask(e){
     let uncheckedNode = e.target;
     let taskTile = e.target.closest("li");
+    let listDetails = taskTile.querySelector(".list-details");
     listDetails.classList.toggle("lineThrough");
     listDetails.classList.toggle("fade");
     uncheckedNode.classList.toggle("checked");
@@ -27,6 +28,18 @@ function styleImportantTask(e){
 
     let starFilled = e.target.nextElementSibling;
     starFilled.classList.toggle("listHidden");
+    // find the task via id
+}
+
+function findSelectedTask(listId){
+    let selectedTask = projectList.reduce((acc, project) =>{
+        let currentTask = project.taskList.find(task => (task.id == listId));
+        if(currentTask != null){
+            acc = currentTask;
+        }
+        return acc;
+    }, {});
+    return selectedTask;   
 }
 
 // update important status on stored object
@@ -51,17 +64,6 @@ function deleteTask(e){
     listNode.remove();
 }
 
-// find the task via id
-function findSelectedTask(listId){
-    let selectedTask = projectList.reduce((acc, project) =>{
-        let currentTask = project.taskList.find(task => (task.id == listId));
-        if(currentTask != null){
-            acc = currentTask;
-        }
-        return acc;
-    }, {});
-    return selectedTask;   
-}
 
 // process the input from edit task
 function processEditTask(e){
